@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyen Van Hung - Senior Backend Developer CV</title>
+  <style>
+    :root {
+      --primary: #3c727c;
+      --primary-dark: #2f5d66;
+      --text: #3a4b5a;
+      --muted: #5d6f7a;
+      --bg: #333333;
+      --white: #ffffff;
+      --accent: #f07333;
+      --line: rgba(51, 51, 51, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: "Mulish", "Poppins", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .page-wrapper {
+      max-width: 1180px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+
+    .cv {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+    }
+
+    .sidebar {
+      background: var(--primary);
+      color: var(--white);
+      padding: 34px 26px 60px;
+    }
+
+    .avatar {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.14);
+      border: 4px solid rgba(255,255,255,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 34px;
+      font-size: 54px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      margin: 38px 0 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .contact-row {
+      margin: 10px 0;
+      font-size: 14px;
+      word-break: break-word;
+    }
+
+    .contact-row strong {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      opacity: 0.9;
+    }
+
+    .skill-item {
+      margin: 12px 0;
+    }
+
+    .skill-label {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .bar {
+      height: 8px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 99px;
+    }
+
+    .side-list {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .side-list li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .main {
+      padding: 36px 34px 56px;
+    }
+
+    .name {
+      font-size: 34px;
+      line-height: 1.15;
+      color: #066273;
+      margin: 0;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .headline {
+      font-size: 18px;
+      color: var(--primary);
+      font-weight: 700;
+      margin: 8px 0 28px;
+    }
+
+    .section {
+      margin-top: 38px;
+    }
+
+    .section-title {
+      color: var(--primary);
+      font-size: 19px;
+      font-weight: 800;
+      margin: 0 0 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .summary {
+      color: var(--primary);
+      font-size: 16px;
+      font-weight: 500;
+      white-space: pre-line;
+    }
+
+    .tech-row {
+      display: flex;
+      gap: 8px;
+      margin: 10px 0;
+      color: var(--primary);
+      font-size: 15px;
+    }
+
+    .tech-row strong {
+      min-width: 150px;
+      color: var(--text);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 160px 14px 1fr;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .timeline-date {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .timeline-role {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+
+    .timeline-line {
+      width: 4px;
+      background: var(--line);
+      border-radius: 12px;
+    }
+
+    .company {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      color: var(--primary);
+      font-size: 15px;
+      font-weight: 500;
+      white-space: pre-line;
+    }
+
+    .desc ul, .project ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .desc li, .project li {
+      margin-bottom: 7px;
+    }
+
+    .project {
+      margin-bottom: 26px;
+      color: var(--primary);
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .project-title {
+      font-size: 16px;
+      color: var(--text);
+      font-weight: 800;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .project-meta {
+      margin: 5px 0;
+    }
+
+    .project-meta strong {
+      color: var(--text);
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eaf3f5;
+      color: var(--primary-dark);
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 3px 4px 3px 0;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page-wrapper {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .cv {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .section {
+        break-inside: avoid;
+      }
+
+      .project {
+        break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .cv {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-line {
+        display: none;
+      }
+
+      .tech-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="cv">
+      <aside class="sidebar">
+        <div class="avatar">HV</div>
+
+        <h2>Contact</h2>
+        <div class="contact-row"><strong>Phone</strong>0946676427</div>
+        <div class="contact-row"><strong>Email</strong>nguyenhung08021993@gmail.com</div>
+        <div class="contact-row"><strong>Address</strong>Ho Chi Minh City, Vietnam</div>
+
+        <h2>Backend Skills</h2>
+        <div class="skill-item"><div class="skill-label">PHP / Laravel</div><div class="bar"><span style="width: 92%"></span></div></div>
+        <div class="skill-item"><div class="skill-label">Node.js / NestJS</div><div class="bar"><span style="width: 86%"></span></div></div>
+        <div class="skill-item"><div class="skill-label">RESTful API</div><div class="bar"><span style="width: 90%"></span></div></div>
+        <div class="skill-item"><div class="skill-label">MySQL / Oracle</div><div class="bar"><span style="width: 84%"></span></div></div>
+        <div class="skill-item"><div class="skill-label">CS-Cart</div><div class="bar"><span style="width: 90%"></span></div></div>
+
+        <h2>Frontend Skills</h2>
+        <div class="skill-item"><div class="skill-label">ReactJS / NextJS</div><div class="bar"><span style="width: 82%"></span></div></div>
+        <div class="skill-item"><div class="skill-label">VueJS</div><div class="bar"><span style="width: 84%"></span></div></div>
+        <div class="skill-item"><div class="skill-label">JavaScript / TypeScript</div><div class="bar"><span style="width: 82%"></span></div></div>
+        <div class="skill-item"><div class="skill-label">HTML / CSS / Smarty</div><div class="bar"><span style="width: 86%"></span></div></div>
+
+        <h2>Tools & Platforms</h2>
+        <ul class="side-list">
+          <li>Git / GitLab</li>
+          <li>Swagger / API Documentation</li>
+          <li>AWS / Firebase</li>
+          <li>Linux Server</li>
+          <li>Agile / Scrum</li>
+          <li>Code Review</li>
+        </ul>
+
+        <h2>Interpersonal Skills</h2>
+        <ul class="side-list">
+          <li>Ownership mindset</li>
+          <li>Problem solving</li>
+          <li>Team collaboration</li>
+          <li>Technical mentoring</li>
+          <li>Production support</li>
+          <li>Attention to detail</li>
+        </ul>
+
+        <h2>Hobbies</h2>
+        <ul class="side-list">
+          <li>Travel</li>
+          <li>Sports</li>
+          <li>Reading</li>
+          <li>Gym</li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <h1 class="name">Nguyen Van Hung</h1>
+        <div class="headline">Senior Backend Developer / Full-stack Developer</div>
+
+        <section class="section">
+          <h2 class="section-title">About Me</h2>
+          <div class="summary">Senior Backend Developer / Full-stack Developer with 8+ years of experience designing, developing, and maintaining eCommerce platforms, enterprise web applications, delivery management systems, finance systems, healthcare reporting tools, and internal business applications.
+
+Strong backend expertise in PHP, Laravel, CodeIgniter, Node.js, NestJS, RESTful API development, database design, system integration, and microservice-oriented backend development. Hands-on frontend experience with ReactJS, NextJS, VueJS, Angular, JavaScript, TypeScript, HTML, CSS, and Smarty.
+
+Experienced in CS-Cart eCommerce customization, marketplace workflows, backend module development, API integration, production troubleshooting, performance optimization, Linux server environments, Firebase, AWS, Git workflow, and working with cross-functional teams.</div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="tech-row"><strong>Backend:</strong><span>PHP, Laravel, CodeIgniter, Node.js, NestJS, RESTful API, Microservices, Authentication, Authorization</span></div>
+          <div class="tech-row"><strong>Frontend:</strong><span>ReactJS, NextJS, VueJS, Angular, JavaScript, TypeScript, HTML, CSS, Smarty</span></div>
+          <div class="tech-row"><strong>eCommerce:</strong><span>CS-Cart customization, marketplace workflows, product/order/vendor/customer modules, promotion logic</span></div>
+          <div class="tech-row"><strong>Database:</strong><span>MySQL, Oracle, database design, query optimization, reporting queries, production data troubleshooting</span></div>
+          <div class="tech-row"><strong>Cloud & DevOps:</strong><span>AWS, Firebase, Linux Server, deployment support, server configuration, production troubleshooting</span></div>
+          <div class="tech-row"><strong>Domains:</strong><span>eCommerce, logistics, finance, HR systems, healthcare reporting, enterprise internal systems</span></div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+          <div class="desc"><strong>Ly Tu Trong College of Ho Chi Minh City</strong>
+2011 - 2014
+
+<strong>Web Design Course - Nhat Nghe Education</strong>
+12/2015 - 03/2016</div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Professional Experiences</h2>
+
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-date">09.2020 - Present</div>
+              <div class="timeline-role">Senior Backend / Full-stack Developer</div>
+            </div>
+            <div class="timeline-line"></div>
+            <div>
+              <div class="company">DOSIIN Co., Ltd.</div>
+              <div class="desc">
+                <ul>
+                  <li>Developed and maintained eCommerce, logistics, finance, HR, and enterprise web applications.</li>
+                  <li>Designed and implemented backend APIs using PHP Laravel, Node.js, NestJS, Firebase, and MySQL.</li>
+                  <li>Customized CS-Cart eCommerce platforms including product, order, vendor, customer, promotion, and marketplace workflows.</li>
+                  <li>Built frontend modules using ReactJS, NextJS, VueJS, Smarty, JavaScript, and TypeScript.</li>
+                  <li>Participated in requirement analysis, system design, database design, API design, code review, deployment support, and production troubleshooting.</li>
+                  <li>Supported team members and improved system stability, maintainability, and performance.</li>
+                </ul>
+                Technologies Used: PHP, Laravel, Node.js, NestJS, CS-Cart, MySQL, Firebase, AWS, ReactJS, NextJS, VueJS, Smarty
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-date">09.2019 - 09.2020</div>
+              <div class="timeline-role">Web Developer / Team Lead</div>
+            </div>
+            <div class="timeline-line"></div>
+            <div>
+              <div class="company">STARBOARD ASIA Co., Ltd.</div>
+              <div class="desc">
+                <ul>
+                  <li>Developed web applications for fishery data calculation and business management.</li>
+                  <li>Led development of a music social network platform with posts, video uploads, music uploads, photos, comments, likes, and sharing.</li>
+                  <li>Handled system analysis, module development, database implementation, and code optimization.</li>
+                  <li>Delivered full-stack features from database to user interface and supported team members during implementation.</li>
+                </ul>
+                Technologies Used: Laravel, CodeIgniter, VueJS, MySQL
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-date">08.2017 - 08.2019</div>
+              <div class="timeline-role">Web Developer</div>
+            </div>
+            <div class="timeline-line"></div>
+            <div>
+              <div class="company">MTV G.M.E Co., Ltd.</div>
+              <div class="desc">
+                <ul>
+                  <li>Developed modules for a hospital statistics and reporting system.</li>
+                  <li>Built reporting features to support hospital data analysis and internal operations.</li>
+                  <li>Implemented business logic, data processing, reporting screens, and database queries.</li>
+                  <li>Optimized code and database queries to improve system performance.</li>
+                </ul>
+                Technologies Used: C#, Angular 6, Oracle
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div>
+              <div class="timeline-date">03.2016 - 08.2017</div>
+              <div class="timeline-role">Web Developer</div>
+            </div>
+            <div class="timeline-line"></div>
+            <div>
+              <div class="company">AZTECH Co., Ltd.</div>
+              <div class="desc">
+                <ul>
+                  <li>Developed an SMS marketing system for enterprise customer communication.</li>
+                  <li>Built CMS admin features for eCommerce management.</li>
+                  <li>Designed and developed WordPress websites based on client requirements.</li>
+                  <li>Participated in system analysis, module development, database design, and code optimization.</li>
+                </ul>
+                Technologies Used: PHP CodeIgniter, Laravel, MySQL, WordPress
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Related Projects</h2>
+
+          <div class="project">
+            <div class="project-title">Dosiin eCommerce Platform</div>
+            <div class="project-meta"><strong>Description:</strong> Fashion eCommerce marketplace supporting product management, order processing, vendor operations, customer management, promotion logic, and marketplace workflows.</div>
+            <div class="project-meta"><strong>Role:</strong> Senior Backend / Full-stack Developer</div>
+            <div class="project-meta"><strong>Team:</strong> 8 members</div>
+            <div class="project-meta"><strong>Technologies:</strong> CS-Cart, PHP, MySQL, Smarty, VueJS</div>
+            <ul>
+              <li>Customized and maintained marketplace features for products, orders, vendors, promotions, and customers.</li>
+              <li>Developed backend modules and admin workflows to support daily eCommerce operations.</li>
+              <li>Supported production issues, performance optimization, and business feature releases.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-title">CHUS eCommerce Platform</div>
+            <div class="project-meta"><strong>Description:</strong> Local products eCommerce platform supporting marketplace operations, product listings, customer orders, vendor management, and business-specific workflows.</div>
+            <div class="project-meta"><strong>Role:</strong> Senior Backend / Full-stack Developer</div>
+            <div class="project-meta"><strong>Team:</strong> 8 members</div>
+            <div class="project-meta"><strong>Technologies:</strong> CS-Cart, PHP, MySQL, Smarty, VueJS</div>
+            <ul>
+              <li>Developed marketplace modules for product, order, vendor, and customer workflows.</li>
+              <li>Customized CS-Cart business logic based on local product marketplace requirements.</li>
+              <li>Supported system maintenance, issue fixing, and feature development.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-title">Lotte DMS</div>
+            <div class="project-meta"><strong>Description:</strong> Enterprise Delivery Management System designed to support logistics operations, delivery workflows, data management, and service integration.</div>
+            <div class="project-meta"><strong>Role:</strong> Lead Developer</div>
+            <div class="project-meta"><strong>Team:</strong> 37 members</div>
+            <div class="project-meta"><strong>Technologies:</strong> Laravel, Node.js, Firebase, VueJS, AWS</div>
+            <ul>
+              <li>Developed backend APIs and business logic for delivery management modules.</li>
+              <li>Participated in service integration, API design, and data flow implementation.</li>
+              <li>Coordinated with a large development team to deliver enterprise logistics features.</li>
+              <li>Supported production troubleshooting and deployment-related tasks.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-title">Keystone of Korea</div>
+            <div class="project-meta"><strong>Description:</strong> Delivery Management System supporting logistics operations, delivery tracking, and internal workflow management.</div>
+            <div class="project-meta"><strong>Role:</strong> Lead Developer</div>
+            <div class="project-meta"><strong>Team:</strong> 20 members</div>
+            <div class="project-meta"><strong>Technologies:</strong> Node.js, Firebase, VueJS, AWS</div>
+            <ul>
+              <li>Built and maintained delivery management modules and operational workflows.</li>
+              <li>Developed backend services using Node.js and integrated Firebase services.</li>
+              <li>Supported frontend integration, AWS deployment, and production maintenance.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-title">XT Project</div>
+            <div class="project-meta"><strong>Description:</strong> Finance Management System supporting internal financial workflows, data management, and business operations.</div>
+            <div class="project-meta"><strong>Role:</strong> Lead Developer</div>
+            <div class="project-meta"><strong>Team:</strong> 10 members</div>
+            <div class="project-meta"><strong>Technologies:</strong> NestJS, Firebase, ReactJS, AWS</div>
+            <ul>
+              <li>Developed finance management modules and backend APIs using NestJS.</li>
+              <li>Built frontend features using ReactJS.</li>
+              <li>Integrated Firebase services and supported AWS deployment.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-title">Lift Project</div>
+            <div class="project-meta"><strong>Description:</strong> Salary Advance Support System supporting HR/finance-related workflows and internal approval processes.</div>
+            <div class="project-meta"><strong>Role:</strong> Lead Developer</div>
+            <div class="project-meta"><strong>Team:</strong> 10 members</div>
+            <div class="project-meta"><strong>Technologies:</strong> NestJS, Firebase, ReactJS, AWS</div>
+            <ul>
+              <li>Developed backend APIs and business logic for salary advance workflows.</li>
+              <li>Built ReactJS frontend modules for user and admin operations.</li>
+              <li>Implemented HR/finance-related workflows for internal enterprise users.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Additional Technical Experience</h2>
+          <div>
+            <span class="tag">CS-Cart Add-ons</span>
+            <span class="tag">Backend Architecture</span>
+            <span class="tag">API Design</span>
+            <span class="tag">Database Optimization</span>
+            <span class="tag">Production Support</span>
+            <span class="tag">System Integration</span>
+            <span class="tag">eCommerce Workflows</span>
+            <span class="tag">Team Collaboration</span>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
